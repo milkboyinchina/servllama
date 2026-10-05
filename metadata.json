@@ -1,0 +1,5 @@
+{
+  "name": "ServLlama",
+  "description": "Self-contained local LLM inference server and chat client supporting llama.cpp (GGUF) and MNN engines, model discovery, download management, and OpenAI-compatible API controls.",
+  "requestFramePermissions": []
+}
