@@ -25,6 +25,16 @@ export const FormatUtils = {
     return `${hours}h ${remMins}m`;
   },
 
+  speed(bytesPerSec: number): string {
+    if (!Number.isFinite(bytesPerSec) || bytesPerSec <= 0) return '0 KB/s';
+    return `${FormatUtils.bytes(bytesPerSec)}/s`;
+  },
+
+  eta(seconds: number): string {
+    if (!Number.isFinite(seconds) || seconds <= 0) return '--';
+    return `${FormatUtils.duration(seconds)} left`;
+  },
+
   extractQuantLabel(fileName: string): string | undefined {
     const match = fileName.match(
       /(Q[2-8]_[A-Z0-9_]+|IQ[1-4]_[A-Z0-9_]+|F16|BF16|FP16|Q4_0|Q8_0)/i
